@@ -2,7 +2,7 @@ import Task from "../models/task.js";
 import User from "../models/user.js";
 
 const normalizeAndValidateRows = (parsedRows) => {
-  const validatedLeads = [];
+  const validatedTasks = [];
 
   parsedRows.forEach((row, index) => {
     const firstName = row.FirstName || row.firstname || row["First Name"];
@@ -16,29 +16,29 @@ const normalizeAndValidateRows = (parsedRows) => {
       return;
     }
 
-    validatedLeads.push({
+    validatedTasks.push({
       firstName: String(firstName).trim(),
       phone: cleanPhone,
       notes: String(notes).trim(),
     });
   });
 
-  if (validatedLeads.length === 0) {
+  if (validatedTasks.length === 0) {
     throw new Error(
       "Validation failure: No valid data rows matched criteria specs.",
     );
   }
 
-  return validatedLeads;
+  return validatedTasks;
 };
 
-const allocateTasksRoundRobin = (validatedLeads, agents) => {
+const allocateTasksRoundRobin = (validatedTasks, agents) => {
   const totalAgents = agents.length;
 
-  return validatedLeads.map((lead, index) => {
+  return validatedTasks.map((task, index) => {
     const assignedAgentIndex = index % totalAgents;
     return {
-      ...lead,
+      ...task,
       assignedTo: agents[assignedAgentIndex]._id,
     };
   });
@@ -77,7 +77,7 @@ const compileAgentTaskMatrix = async (agents) => {
   );
 };
 
-export const uploadAndDistributeLeadsController = async (req, res) => {
+export const uploadAndDistributeTasksController = async (req, res) => {
   try {
     const { parsedRows } = req.body;
 
@@ -99,8 +99,8 @@ export const uploadAndDistributeLeadsController = async (req, res) => {
       });
     }
 
-    const validatedLeads = normalizeAndValidateRows(parsedRows);
-    const finalTasksToInsert = allocateTasksRoundRobin(validatedLeads, agents);
+    const validatedTasks = normalizeAndValidateRows(parsedRows);
+    const finalTasksToInsert = allocateTasksRoundRobin(validatedTasks, agents);
     const insertedTasks = await Task.insertMany(finalTasksToInsert);
     const distributionSummary = generateDistributionSummary(
       agents,

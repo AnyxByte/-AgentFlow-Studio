@@ -138,7 +138,7 @@ export default function Landing() {
         <div className="space-y-3 sm:space-y-4">
           <FAQItem
             question="How does the remainder distribution logic process uneven datasets?"
-            answer="The distribution engine reads the total parsed lead index count array length. It executes a clean modulo operation against the active agent collection pool, distributing left-over index values sequentially to starting agents."
+            answer="The distribution engine reads the total parsed task index count array length. It executes a clean modulo operation against the active agent collection pool, distributing left-over index values sequentially to starting agents."
           />
           <FAQItem
             question="What strategy isolates data parsing errors inside the upload system?"

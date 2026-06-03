@@ -202,7 +202,7 @@ export default function FileUploader({ onUploadSuccess }) {
   return (
     <div className="w-full bg-[#0e1422]/40 border border-slate-900 rounded-2xl p-6 sm:p-8 backdrop-blur-md space-y-4">
       <div>
-        <h3 className="text-lg font-bold text-white">Import Leads Directory</h3>
+        <h3 className="text-lg font-bold text-white">Import File</h3>
         <p className="text-xs text-slate-400 mt-1">
           Upload a CSV / XLSX / XLS file with columns:{" "}
           <span className="font-mono text-slate-300">
@@ -363,7 +363,7 @@ export default function FileUploader({ onUploadSuccess }) {
             className="px-6 py-2.5 text-xs font-semibold text-slate-950 bg-linear-to-r from-emerald-400 to-teal-400 rounded-xl hover:opacity-95 flex items-center gap-2 shadow-md shadow-emerald-500/10 transition-all active:scale-95 duration-150 disabled:opacity-40 disabled:cursor-not-allowed"
           >
             <Play className="w-3.5 h-3.5 fill-current" />
-            Process & Distribute Leads
+            Process & Distribute Tasks
           </button>
         </div>
       )}

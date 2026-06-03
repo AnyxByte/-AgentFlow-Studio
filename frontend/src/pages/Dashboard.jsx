@@ -1,13 +1,7 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import { toast } from "react-hot-toast";
-import {
-  Users,
-  UserPlus,
-  Layers,
-  LogOut,
-  RefreshCw,
-} from "lucide-react";
+import { Users, UserPlus, Layers, LogOut, RefreshCw } from "lucide-react";
 import FileUploader from "../components/dashboard/FileUploader";
 import { CreateAgent } from "../components/dashboard/CreateAgent";
 import { useNavigate } from "react-router";
@@ -23,7 +17,6 @@ export default function Dashboard() {
   const navigate = useNavigate();
 
   const token = localStorage.getItem("token");
-  const activeUser = JSON.parse(localStorage.getItem("user") || "{}");
 
   const fetchDashboardMatrix = async () => {
     setIsLoading(true);
@@ -70,19 +63,10 @@ export default function Dashboard() {
             <span className="font-bold text-base tracking-tight block">
               AgentFlow Studio
             </span>
-            <span className="text-[10px] font-mono tracking-wider uppercase text-emerald-400">
-              Admin Environment
-            </span>
           </div>
         </div>
 
         <div className="flex items-center gap-4">
-          <span className="hidden sm:inline text-xs font-medium text-slate-400 bg-slate-900 border border-slate-800 px-3 py-1.5 rounded-lg">
-            User context:{" "}
-            <span className="text-slate-200 font-semibold">
-              {activeUser.name || "System Admin"}
-            </span>
-          </span>
           <button
             onClick={handleLogout}
             className="flex items-center gap-2 text-xs font-semibold text-rose-400 hover:text-rose-300 transition-colors bg-rose-500/5 hover:bg-rose-500/10 border border-rose-500/10 rounded-lg px-3 py-1.5"

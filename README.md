@@ -127,7 +127,7 @@ This creates the following admin account in MongoDB:
 - Fill in: Name, Email, Mobile Number (with country code), Password
 
 ### 3. Upload & Distribute CSV
-- Click the upload zone in **"Import Leads Directory"**
+- Click the upload zone in **"Import File"**
 - Upload a `.csv`, `.xlsx`, or `.xls` file
 - Required columns (any casing accepted):
 
@@ -137,7 +137,7 @@ This creates the following admin account in MongoDB:
 | `Phone`     | Number | 9876543210       |
 | `Notes`     | Text   | Follow up Monday |
 
-- Click **"Process & Distribute Leads"**
+- Click **"Process & Distribute Tasks"**
 - Tasks are split equally — remainder rows go to agents sequentially (round-robin)
 
 ### 4. View Distributed Lists
@@ -148,7 +148,7 @@ This creates the following admin account in MongoDB:
 
 ## Sample CSV
 
-A sample file is provided at `client/src/assets/sample_leads.csv`.
+A sample file is provided at `client/src/assets/sample_tasks.csv`.
 
 ```csv
 FirstName,Phone,Notes

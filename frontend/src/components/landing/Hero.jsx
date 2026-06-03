@@ -1,5 +1,6 @@
 import useCountUp from "../../hooks/useCountUp";
 import { Shield, Users, UploadCloud, ArrowRight } from "lucide-react";
+import { Link } from "react-router";
 
 export default function Hero({ setIsLoginOpen }) {
   return (
@@ -18,12 +19,14 @@ export default function Hero({ setIsLoginOpen }) {
       </p>
 
       <div className="flex flex-col sm:flex-row gap-4 justify-center items-center">
-        <button
-          onClick={() => setIsLoginOpen(true)}
-          className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-white text-slate-950 font-semibold rounded-xl shadow-xl shadow-white/5 transition-all transform active:scale-95"
-        >
-          Access Admin Console <ArrowRight className="w-4 h-4" />
-        </button>
+        <Link to="/login">
+          <button
+            onClick={() => setIsLoginOpen(true)}
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-white text-slate-950 font-semibold rounded-xl shadow-xl shadow-white/5 transition-all transform active:scale-95"
+          >
+            Access Admin Console <ArrowRight className="w-4 h-4" />
+          </button>
+        </Link>
         <a
           href="#features"
           className="w-full sm:w-auto px-6 py-3.5 bg-slate-900/60 hover:bg-slate-900 text-slate-300 hover:text-white font-semibold rounded-xl border border-slate-800 transition-colors"
