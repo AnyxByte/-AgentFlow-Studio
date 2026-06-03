@@ -27,7 +27,7 @@ Make sure you have the following installed:
 
 ### Backend — `server/.env`
 
-Create a file at `server/  named .env` with the following:
+Create a file at `server/  .env` with the following:
 
 ```env
 PORT=5000
@@ -37,9 +37,9 @@ MONGO_URI=mongodb+srv://<username>:<password>@cluster0.epbfjnd.mongodb.net/
 JWT_SECRET=your_jwt_secret_key_here
 ```
 
-### Frontend — `client/.env`
+### Frontend — `frontend/.env`
 
-Create a file at `client/.env` with the following:
+Create a file at `frontend/   .env` with the following:
 
 ```env
 VITE_BACKEND_URL=http://localhost:5000/api
@@ -148,7 +148,7 @@ This creates the following admin account in MongoDB:
 
 ## Sample CSV
 
-A sample file is provided at `client/src/assets/sample_tasks.csv`.
+A sample file is provided at `frontend/src/assets/sample_tasks.csv`.
 
 ```csv
 FirstName,Phone,Notes
@@ -217,5 +217,5 @@ Carol White,7654321098,Needs product demo
 
 ## Video Demonstration
 
-[Watch on Google Drive](#) — *(replace this link with your actual Drive link)*
+(https://drive.google.com/file/d/177OjF_JRzUPtvx_6HOwX2cN0h4MipMv6/view)
 
