@@ -4,10 +4,6 @@ import { Shield, Users, UploadCloud, ArrowRight } from "lucide-react";
 export default function Hero({ setIsLoginOpen }) {
   return (
     <section className="relative pt-24 pb-20 px-6 max-w-7xl mx-auto text-center">
-      <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-slate-900 border border-slate-800 text-xs font-medium text-emerald-400 mb-6 shadow-inner">
-        <Shield className="w-3.5 h-3.5" /> MERN Stack Evaluation Environment
-      </div>
-
       <h1 className="text-5xl md:text-7xl font-bold tracking-tight uppercase max-w-4xl mx-auto mb-6 leading-tight">
         Intelligent Workflow &{" "}
         <span className="bg-linear-to-r from-emerald-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">
