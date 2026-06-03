@@ -56,7 +56,7 @@ export default function Dashboard() {
   const handleLogout = () => {
     localStorage.clear();
     toast.success("Logged out.");
-    navigate("/logins");
+    navigate("/login");
   };
 
   return (
