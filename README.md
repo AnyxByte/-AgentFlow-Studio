@@ -34,7 +34,7 @@ PORT=5000
 CLIENT_URL=http://localhost:5173
 NODE_ENV=development
 MONGO_URI=mongodb+srv://<username>:<password>@cluster0.epbfjnd.mongodb.net/
-JWT_SECRET=your_jwt_secret_key_here
+JWT_SECRET=mdYsrXtqvfwCvkSTzVpMrZGzliVO9nsb4q5WxSdvB5y
 ```
 
 ### Frontend — `frontend/.env`
@@ -53,7 +53,7 @@ VITE_BACKEND_URL=http://localhost:5000/api
 
 ```bash
 git clone https://github.com/AnyxByte/-AgentFlow-Studio.git
-cd agentflow
+cd .\-AgentFlow-Studio\
 ```
 
 ### 2. Install backend dependencies
