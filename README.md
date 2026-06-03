@@ -27,7 +27,7 @@ Make sure you have the following installed:
 
 ### Backend — `server/.env`
 
-Create a file at `server/.env` with the following:
+Create a file at `server/  named .env` with the following:
 
 ```env
 PORT=5000
