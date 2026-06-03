@@ -7,23 +7,17 @@ dotenv.config();
 
 const executeDatabaseSeed = async () => {
   try {
-    console.log(
-      "⏳ Checking database for existing administrative credentials...",
-    );
+    console.log("Checking database existing admin...");
 
     const adminExists = await User.findOne({ role: "admin" });
 
     if (adminExists) {
-      console.log(
-        "ℹ️ Identity Check: A root administrator profile is already configured.",
-      );
-      console.log(`   Registered login account target: ${adminExists.email}`);
+      console.log("A root administrator profile is already configured.");
+      console.log(`Registered login account: ${adminExists.email}`);
       return;
     }
 
-    console.log(
-      "⚠️ No administrator detected. Initializing data seeder blueprint...",
-    );
+    console.log("No admin detected....");
 
     const defaultAdmin = await User.create({
       name: "System Admin",
@@ -33,18 +27,11 @@ const executeDatabaseSeed = async () => {
       role: "admin",
     });
 
-    console.log(
-      "✨ ───────────────────────────────────────────────────────── ✨",
-    );
-    console.log("✅ SEED CONFIGURATION COMPILED SUCCESSFULLY!");
-    console.log(`   User Profile Identity: ${defaultAdmin.name}`);
-    console.log(`   Access Account User  : ${defaultAdmin.email}`);
-    console.log("   Temporary Secret Key : Admin@123");
-    console.log(
-      "✨ ───────────────────────────────────────────────────────── ✨",
-    );
+    console.log("seed config success!");
+    console.log(`User Profile Identity: ${defaultAdmin.name}`);
+    console.log(`Access Account User  : ${defaultAdmin.email}`);
   } catch (error) {
-    console.error("❌ Business Logic Exception during seeder execution cycle:");
+    console.error("Error during seeding");
     throw error;
   }
 };
@@ -56,14 +43,10 @@ const runSeederLifecycle = async () => {
     await executeDatabaseSeed();
 
     await mongoose.connection.close();
-    console.log(
-      "🔌 Database pool connection gracefully terminated. Setup complete.",
-    );
+    console.log(" Database connection terminated. Setup complete.");
     process.exit(0);
   } catch (error) {
-    console.error(
-      "💥 Critical Failure: Seeding sequence terminated unexpectedly.",
-    );
+    console.error("Seeding sequence error");
     console.error(error.stack || error);
 
     await mongoose.connection.close();
