@@ -7,7 +7,7 @@ export default function Hero({ setIsLoginOpen }) {
     <section className="relative pt-24 pb-20 px-6 max-w-7xl mx-auto text-center">
       <h1 className="text-5xl md:text-7xl font-bold tracking-tight uppercase max-w-4xl mx-auto mb-6 leading-tight">
         Intelligent Workflow &{" "}
-        <span className="bg-linear-to-r from-emerald-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">
+        <span className="bg-gradient-to-r from-emerald-400 via-teal-400 to-blue-500 bg-clip-text text-transparent">
           Task Distribution
         </span>
       </h1>
@@ -22,7 +22,7 @@ export default function Hero({ setIsLoginOpen }) {
         <Link to="/login">
           <button
             onClick={() => setIsLoginOpen(true)}
-            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-white text-slate-950 font-semibold rounded-xl shadow-xl shadow-white/5 transition-all transform active:scale-95"
+            className="w-full sm:w-auto flex items-center justify-center gap-2 px-6 py-3.5 bg-slate-100 hover:bg-white text-slate-950 font-semibold rounded-xl shadow-xl shadow-white/5 transition-all transform active:scale-95 cursor-pointer"
           >
             Access Admin Console <ArrowRight className="w-4 h-4" />
           </button>
@@ -35,12 +35,13 @@ export default function Hero({ setIsLoginOpen }) {
         </a>
       </div>
 
+      {/* Metrics Section Dashboard Banner */}
       <div className="grid grid-cols-1 sm:grid-cols-3 gap-6 max-w-4xl mx-auto mt-20 border border-slate-900 bg-slate-950/40 backdrop-blur-md rounded-2xl p-6 shadow-2xl">
         {[
           {
-            n: 5,
-            suffix: " Active Channels",
-            label: "Sequential Modulo Rules",
+            n: 100,
+            suffix: "% Dynamic",
+            label: "Round-Robin Modulo Balancing",
             icon: Users,
           },
           {

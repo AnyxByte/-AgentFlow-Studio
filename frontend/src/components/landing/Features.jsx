@@ -43,7 +43,7 @@ const Features = () => {
           {
             icon: GitMerge,
             title: "Modulo Assignment Rule",
-            text: "Processes record matrices cleanly through a round-robin engine ($N \\pmod 5$) to maintain equal block assignment structures.",
+            text: "Processes record matrices cleanly through a round-robin engine to maintain equal block assignment structures.",
           },
           {
             icon: Database,

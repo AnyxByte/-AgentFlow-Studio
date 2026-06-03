@@ -92,9 +92,9 @@ export default function Dashboard() {
                 Active Allocation Core
               </h3>
               <p className="text-xs text-slate-400 mt-1 leading-relaxed">
-                Task streams map exclusively to active operators. System
-                restrictions constrain distribution balancing down to an active
-                pool of exactly 5 agents.
+                Task streams map exclusively to active operators. The system
+                engine automatically handles distribution balancing by
+                dynamically scaling across your active agent pool.
               </p>
             </div>
 
