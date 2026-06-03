@@ -24,6 +24,9 @@ export const CreateAgent = ({
     },
   });
 
+  const backendUrl =
+    import.meta.env.VITE_BACKEND_URL || "http://localhost:5000/api";
+
   const handleFormSubmit = async (formData) => {
     setIsSubmitting(true);
     const apiToastId = toast.loading("Provisioning new agent record...");
@@ -31,13 +34,9 @@ export const CreateAgent = ({
     try {
       const token = localStorage.getItem("token");
 
-      const response = await axios.post(
-        "http://localhost:5000/api/agents",
-        formData,
-        {
-          headers: { Authorization: `Bearer ${token}` },
-        },
-      );
+      const response = await axios.post(`${backendUrl}/agents`, formData, {
+        headers: { Authorization: `Bearer ${token}` },
+      });
 
       if (response.data.success) {
         toast.success("Agent profile provisioned successfully!", {
